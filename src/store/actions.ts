@@ -1,3 +1,6 @@
 export default{
-    leitura: "LEITURA"
+    leitura: "LEITURA",
+    cadastro: "CADASTRO",
+    alterar:"ALTERAR",
+    deletar:"DELETE"
 }

@@ -1,6 +1,7 @@
 export interface ICliente {
-  id: number;
+  id: string;
   name: string;
   code: string;
   reference: string;
+  chave?:string
 }

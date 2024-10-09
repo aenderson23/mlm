@@ -1,32 +1,23 @@
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
-import actions from "./actions";
-import mutations from "./mutations";
-import { ICliente } from "@/interfaces/IClientes";
 import { InjectionKey } from "vue";
-import http from "@/http";
+import {cliente, EstadoCliente} from "./clientes"
 interface Estado {
-  clientes: ICliente[];
+  cliente: EstadoCliente;
 }
 
 const store = createStore<Estado>({
   state: {
-    clientes: [],
+    cliente: {
+      clientes:[]
+    }
   },
   mutations: {
-    [mutations.leitura](state, clientes: ICliente[]) {
-      state.clientes = clientes;
-    },
+    
   },
   actions: {
-    [actions.leitura]({ commit }) {
-      http
-        .get("/clientes")
-        .then((response) =>
-          commit(mutations.leitura, response.data as ICliente[])
-        );
-    },
+    
   },
-  modules: {},
+  modules: {cliente},
 });
 const key: InjectionKey<Store<Estado>> = Symbol();
 function useStore(): Store<Estado> {
