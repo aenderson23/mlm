@@ -1,0 +1,16 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "name": "Jhon Doe",
+      "code": "code",
+      "reference": "referal"
+    },
+    {
+      "id": "2",
+      "name": "Jhon Doe",
+      "code": "code",
+      "reference": "referal"
+    }
+  ]
+}
