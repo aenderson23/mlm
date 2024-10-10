@@ -1,10 +1,10 @@
 <template>
   <div class="row">
-    <div class="col col-3" v-for="cliente in clientes" :key="cliente.id">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3" v-for="cliente in clientes" :key="cliente.id">
       <ClienteView :cliente="cliente" />
     </div>
   </div>
-  <div class="row mt-3">
+  <div class="row">
     <RouterLink to="/cliente" class="btn btn-success col-3">Cadastrar um novo cliente</RouterLink>
   </div>
 </template>

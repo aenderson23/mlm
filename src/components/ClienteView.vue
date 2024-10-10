@@ -17,53 +17,63 @@
         Editar
       </button>
     </div>
-    <div class="card-footer">
-      <Modal :name="'clienteModal' + cliente.id">
-        <template v-slot:botao>Procurar Dependentes</template>
-        <template v-slot:header>{{ cliente.name }}</template>
-        <template v-slot:body>
-          <p>your code: {{ cliente.code }}</p>
-          <ul class="list-group">
-            <li
-              class="list-group-item"
-              v-for="cli in clientes"
-              :key="cli.id"
-            >
-              <div class="card shadow-sm">
+    <div class="card-footer component">
+      <div class="row">
+        <div class="col">
+          <Modal :name="'clienteModal' + cliente.id">
+            <template v-slot:botao>Procurar Dependentes</template>
+            <template v-slot:header>{{ cliente.name }}</template>
+            <template v-slot:body>
+              <p>your code: {{ cliente.code }}</p>
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  v-for="cli in clientes"
+                  :key="cli.id"
+                >
+                  <div class="card shadow-sm">
+                    <div class="card-header component">
+                      {{ cli.name }}
+                    </div>
+                    <div class="card-body">
+                      <p>His code: {{ cli.code }}</p>
+                    </div>
+                    <div class="card-footer">OK</div>
+                  </div>
+                </li>
+              </ul>
+            </template>
+            <template v-slot:footer>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                Ok
+              </button>
+            </template>
+          </Modal>
+        </div>
+        <div class="col">
+          <Modal :name="'clienteReference' + cliente.id">
+            <template v-slot:botao>Ver Pai</template>
+            <template v-slot:header>{{ cliente.name }}</template>
+            <template v-slot:body>
+              <p>your referal: {{ cliente.reference }}</p>
+              <div class="card shadow-sm" v-if="pai">
                 <div class="card-header component">
-                  {{ cli.name }}
+                  {{ pai?.name || "" }}
                 </div>
                 <div class="card-body">
-                  <p>His code: {{ cli.code }}</p>
+                  <p>His code: {{ pai?.code || "" }}</p>
                 </div>
                 <div class="card-footer">OK</div>
               </div>
-            </li>
-          </ul>
-        </template>
-        <template v-slot:footer>
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
-        </template>
-      </Modal>
-      <Modal :name="'clienteReference' + cliente.id">
-        <template v-slot:botao>Ver Pai</template>
-        <template v-slot:header>{{ cliente.name }}</template>
-        <template v-slot:body>
-          <p>your referal: {{ cliente.reference }}</p>
-          <div class="card shadow-sm" v-if="pai">
-            <div class="card-header component">
-              {{ pai?.name||"" }}
-            </div>
-            <div class="card-body">
-              <p>His code: {{ pai?.code ||""}}</p>
-            </div>
-            <div class="card-footer">OK</div>
-          </div>
-        </template>
-        <template v-slot:footer>
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
-        </template>
-      </Modal>
+            </template>
+            <template v-slot:footer>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                Ok
+              </button>
+            </template>
+          </Modal>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -95,9 +105,11 @@ export default defineComponent({
         (cli) => cli.reference == props.cliente.code
       )
     );
-    const pai = computed(()=>
-      store.state.cliente.clientes.find(cli=>cli.code==props.cliente.reference)
-    )
+    const pai = computed(() =>
+      store.state.cliente.clientes.find(
+        (cli) => cli.code == props.cliente.reference
+      )
+    );
     const editarCliente = (id: string): void => {
       router.push("/cliente/" + id);
     };
