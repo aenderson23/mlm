@@ -37,5 +37,56 @@
       "code": "n8k8pitmla",
       "reference": "l6rej4zbee"
     }
+  ],
+  "compras": [
+    {
+      "id": "1",
+      "produto": {
+        "id": "1",
+        "valor": 22.22,
+        "nome": "string",
+        "cliente vendedor": {
+          "id": "3124",
+          "name": "Debora Fonseca",
+          "code": "n8k8pitmla",
+          "reference": "l6rej4zbee"
+        }
+      },
+      "cliente comprador": {
+        "id": "3124",
+        "name": "Debora Fonseca",
+        "code": "n8k8pitmla",
+        "reference": "l6rej4zbee"
+      },
+      "valor de passagem": 0.1
+    }
+  ],
+  "produtos": [
+    {
+      "id": "5a4d",
+      "nome": "compra de cartas",
+      "valor": 400,
+      "cliente vendedor": {
+        "id": "b158",
+        "name": "Aenderson Romaldino de Oliveira",
+        "code": "bzpbcjzpu7",
+        "reference": "5yt",
+        "chave": "string"
+      },
+      "imagem": "logo.png"
+    },
+    {
+      "id": "0a85",
+      "nome": "adicionar dinheiro",
+      "valor": 600,
+      "cliente vendedor": {
+        "id": "c24c",
+        "name": "Aenderson Romaldino de Oliveira",
+        "code": "bzpbcjzpu7",
+        "reference": "5yt",
+        "chave": "string"
+      },
+      "imagem": "logo.png"
+    }
   ]
 }

@@ -3,5 +3,6 @@ export interface ICliente {
   name: string;
   code: string;
   reference: string;
-  chave?:string
+  chave?:string;
+  carteira?:number
 }

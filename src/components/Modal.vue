@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#'+name"><slot name="botao"/></button>
+    <button class="btn" :class="btn" data-bs-toggle="modal" :data-bs-target="'#'+name"><slot name="botao"/></button>
   <div
     class="modal fade"
     :id="name"
@@ -33,7 +33,8 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name:"Modal",
     props:{
-        name:{type:String, required:true}
+        name:{type:String, required:true},
+        btn:{type:String, default:"btn-primary"}
     }
 })
 </script>
