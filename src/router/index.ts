@@ -4,6 +4,7 @@ import AlterarCliente from "@/views/cliente/AlterarCliente.vue";
 import CadastrarCliente from "@/views/cliente/CadastrarCliente.vue";
 import Compra from "@/views/Compra.vue";
 import CadastrarProduto from "@/views/compra/CadastrarProduto.vue";
+import ComprarProduto from "@/views/compra/ComprarProduto.vue";
 import DeletarProduto from "@/views/compra/DeletarProduto.vue";
 import EditarProduto from "@/views/compra/EditarProduto.vue";
 import Vitrine from "@/views/compra/Vitrine.vue";
@@ -64,6 +65,12 @@ const routes: Array<RouteRecordRaw> = [
         component: EditarProduto,
         props:true
       },
+      {
+        path:"checkout/:id",
+        name: "interface de compra de produtos",
+        component: ComprarProduto,
+        props: true
+      }
     ],
   },
 ];

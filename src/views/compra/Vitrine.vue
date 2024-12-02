@@ -19,9 +19,24 @@
           <h3>Valor: {{ produto.valor }}</h3>
         </div>
         <div class="card-footer d-flex justify-content-around">
-          <button class="btn btn-outline-secondary">comprar</button>
-          <button class="btn btn-outline-danger" @click="deletarProduto(produto.id)">deletar</button>
-          <button class="btn btn-outline-warning" @click="editarProduto(produto.id)">editar</button>
+          <button
+            class="btn btn-outline-secondary"
+            @click="comprarProduto(produto.id)"
+          >
+            comprar
+          </button>
+          <button
+            class="btn btn-outline-danger"
+            @click="deletarProduto(produto.id)"
+          >
+            deletar
+          </button>
+          <button
+            class="btn btn-outline-warning"
+            @click="editarProduto(produto.id)"
+          >
+            editar
+          </button>
         </div>
       </div>
     </div>
@@ -42,22 +57,26 @@ export default defineComponent({
     const store = useStore();
     store.dispatch(actions.leitura);
     const produtos = computed(() => store.state.produto.produtos);
-    const getIMG = (img:string) => {
+    const getIMG = (img: string) => {
       const image = require.context("../../assets/", false);
       return image("./" + img);
     };
-    const deletarProduto = (id:string)=>{
-      store.dispatch(actions.deletar, id)
-      window.location.reload()
-    }
-    const editarProduto = (id:string)=>{
-      router.push("/compra/alterar/"+id)
-    }
+    const deletarProduto = (id: string) => {
+      store.dispatch(actions.deletar, id);
+      window.location.reload();
+    };
+    const editarProduto = (id: string) => {
+      router.push("/compra/alterar/" + id);
+    };
+    const comprarProduto = (id: string) => {
+      router.push("/compra/checkout/" + id);
+    };
     return {
       produtos,
       getIMG,
       deletarProduto,
-      editarProduto
+      editarProduto,
+      comprarProduto,
     };
   },
 });

@@ -16,8 +16,9 @@
     {
       "id": "b158",
       "name": "Liga yugioh",
+      "reference": "bzpbcjzpu7",
       "code": "22en1huhso",
-      "reference": "bzpbcjzpu7"
+      "carteira": 400
     },
     {
       "id": "ea51",
@@ -81,6 +82,19 @@
       "valor": 600,
       "cliente vendedor": {
         "id": "c24c",
+        "name": "Aenderson Romaldino de Oliveira",
+        "code": "bzpbcjzpu7",
+        "reference": "5yt",
+        "chave": "string"
+      },
+      "imagem": "logo.png"
+    },
+    {
+      "id": "ba6b",
+      "nome": "tupan TCT",
+      "valor": 1200,
+      "cliente vendedor": {
+        "id": "e98f",
         "name": "Aenderson Romaldino de Oliveira",
         "code": "bzpbcjzpu7",
         "reference": "5yt",
