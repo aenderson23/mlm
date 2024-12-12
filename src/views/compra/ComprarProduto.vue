@@ -10,12 +10,6 @@
   <div class="alert alert-danger" role="alert" v-if="msg != ''">
     {{ msg }}
   </div>
-  <!--div class="input-group">
-    <label for="range" class="input-group-text">{{ max }}</label>
-    <div class="form-control">
-        <input type="range" step="1" max="5" min="1" v-model="max" class="form-range" id="range">
-    </div>
-  </div-->
   <div class="input-group">
     <label for="nome" class="input-group-text">usuário comprador</label>
     <select name="nome" class="form-select" id="nome" v-model="user">
