@@ -5,7 +5,7 @@
         <RouterLink class="col" to="/">Home</RouterLink>
         <RouterLink class="col" to="/cliente">cadastrar novo cliente</RouterLink>
         <RouterLink class="col" to="/compra">Ambiente de compras</RouterLink>
-        <a href="#" class="link col">Login</a>
+        <RouterLink class="col" to="/login">Login</RouterLink>
       </div>
     </div>
   </nav>

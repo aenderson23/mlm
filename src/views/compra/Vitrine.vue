@@ -11,12 +11,7 @@
           <h3 class="card-title">{{ produto.nome }}</h3>
         </div>
         <div class="card-body">
-          <img
-            :src="getIMG(produto.imagem)"
-            :alt="'imagem do produto ' + produto.nome"
-            class="card-image-top"
-          />
-          <h3>Valor: {{ produto.valor }}</h3>
+          <h3>Valor: {{ produto.valor.toLocaleString('en',{style:'currency', currency:'USD'}) }}</h3>
         </div>
         <div class="card-footer d-flex justify-content-around">
           <button
@@ -57,10 +52,6 @@ export default defineComponent({
     const store = useStore();
     store.dispatch(actions.leitura);
     const produtos = computed(() => store.state.produto.produtos);
-    const getIMG = (img: string) => {
-      const image = require.context("../../assets/", false);
-      return image("./" + img);
-    };
     const deletarProduto = (id: string) => {
       store.dispatch(actions.deletar, id);
       window.location.reload();
@@ -73,7 +64,6 @@ export default defineComponent({
     };
     return {
       produtos,
-      getIMG,
       deletarProduto,
       editarProduto,
       comprarProduto,

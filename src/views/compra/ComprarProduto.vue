@@ -54,7 +54,7 @@
       <div class="alert alert-warning" v-if="representantes.length == 0">
         whoops, lista vazia
       </div>
-      <p>Your code: {{ clientes.find((cli) => cli.id == user)?.code }}</p>
+      <p>Your Referal: {{ clientes.find((cli) => cli.id == user)?.reference }}</p>
       <ul class="list-group">
         <li
           class="list-group-item"
@@ -121,7 +121,7 @@ export default defineComponent({
           msg.value = "valor insulficiente para a transação";
         } else {
           msg.value = "";
-          representantes.value = puxarRepresentante(4, usuario, store);
+          representantes.value = puxarRepresentante(6, usuario, store);
         }
       } else {
         msg.value =

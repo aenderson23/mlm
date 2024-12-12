@@ -28,23 +28,29 @@ export default defineComponent({
     const store = useStore();
     const name = ref("");
     const referal = ref("");
-    let cliente: ICliente|undefined;
+    let cliente: ICliente | undefined;
     if (props.id) {
       cliente = store.state.cliente.clientes.find((cli) => cli.id == props.id);
       name.value = cliente?.name || "";
       referal.value = cliente?.reference || "";
     }
     const alterar = () => {
+      const cliente2 = {
+          id: props.id,
+        name: name.value,
+        code: cliente?.code,
+        reference: referal.value,
+        chave: cliente?.chave,
+        carteira: cliente?.carteira,
+        } as ICliente
       store.dispatch(actions.alterar, {
-        id:props.id,
-        name:name.value,
-        reference:referal.value,
-        code:cliente?.code
+        cliente:cliente2,
+        auth:"anystring"
       });
-      router.push('/')
+      router.push("/");
     };
-    
-    return {name,referal,alterar};
+
+    return { name, referal, alterar };
   },
 });
 </script>

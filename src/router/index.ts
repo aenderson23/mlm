@@ -9,6 +9,7 @@ import DeletarProduto from "@/views/compra/DeletarProduto.vue";
 import EditarProduto from "@/views/compra/EditarProduto.vue";
 import Vitrine from "@/views/compra/Vitrine.vue";
 import Home from "@/views/Home.vue";
+import Login from "@/views/Login.vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 //construtor das rotas
@@ -73,6 +74,12 @@ const routes: Array<RouteRecordRaw> = [
       }
     ],
   },
+  //interface de login e conexão com o bubble
+  {
+    path:"/login",
+    name:"login",
+    component:Login
+  }
 ];
 
 //inicialização

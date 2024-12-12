@@ -1,6 +1,6 @@
 <template>
   <RouterView />
-  <span class="accordion" id="areaExclusiva">
+  <!--span class="accordion" id="areaExclusiva">
     <div class="accordion-item">
       <h2 class="accordion header">
         <button
@@ -59,11 +59,11 @@
         </div>
       </div>
     </div>
-  </span>
+  </!--span-->
 </template>
 
 <script lang="ts">
-import Modal from "@/components/Modal.vue";
+//import Modal from "@/components/Modal.vue";
 import router from "@/router";
 import { useStore } from "@/store";
 import actions from "@/store/produtos/actions";
@@ -87,9 +87,9 @@ export default defineComponent({
       router.push("/compra/alterar/" + this.id);
     },
   },
-  components: {
+  /*components: {
     Modal,
-  },
+  },*/
   setup() {
     const store = useStore();
     store.dispatch(actions.leitura);

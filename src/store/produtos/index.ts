@@ -4,6 +4,9 @@ import mutations from "./mutations";
 import http from "@/http";
 import { Estado } from "..";
 import { IProdutos } from "@/interfaces/IProdutos";
+import { Structure } from "@/Structure";
+
+const structure = new Structure()
 interface EstadoProduto {
   produtos: IProdutos[]
 }
@@ -29,7 +32,15 @@ const produto: Module<EstadoProduto, Estado> = {
   },
   actions: {
     [actions.leitura]({ commit }) {
-      http.get("/produtos").then((response) => commit(mutations.leitura,response.data as IProdutos[]));
+      const pacotes = structure.pacotes
+      const produtos = [] as IProdutos[]
+      pacotes.forEach((pcte,index)=>produtos.push({
+        id:index.toString(),
+        nome: pcte.nome,
+        valor:pcte.valor,
+      } as IProdutos))
+      commit(mutations.leitura,produtos)
+      //http.get("/produtos").then((response) => commit(mutations.leitura,response.data as IProdutos[]));
     },
     [actions.cadastro]({ commit }, produto: IProdutos) {
       http

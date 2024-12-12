@@ -14,7 +14,7 @@ function puxarRepresentante(
   let usuario = user
   for (let i = 0; i < level; i++) {
     const filter = listaClientes.value.find(
-      (cliente) => usuario.code == cliente.reference
+      (cliente) => usuario.reference == cliente.code
     );
     if (!filter) {
       break;
