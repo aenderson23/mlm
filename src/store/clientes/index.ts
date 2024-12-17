@@ -42,6 +42,7 @@ const cliente: Module<EstadoCliente, Estado> = {
               reference: user.reference || "empty",
               chave: user.chave,
               carteira: user.carteira,
+              mensagens:user.mesages
             });
           });
           commit(mutations.leitura, cliente);
@@ -74,6 +75,7 @@ const cliente: Module<EstadoCliente, Estado> = {
             reference: user.reference || "empty",
             chave: user.chave,
             carteira: user.carteira,
+            mensagens:user.mesages
           } as ICliente
           commit(mutations.alterar,cliente)
         });
@@ -95,6 +97,7 @@ interface retorno {
   _id: string;
   name: string;
   reference: string;
+  mesages:string[]
 }
 
 function cifrarEntrada(object: object): string {

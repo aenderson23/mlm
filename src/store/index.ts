@@ -1,13 +1,13 @@
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
 import { InjectionKey } from "vue";
 import { cliente, EstadoCliente } from "./clientes";
-import { compra, EstadoCompra } from "./compras";
+import { country, EstadoCountry } from "./countries";
 import { EstadoProduto, produto } from "./produtos";
 import {apiWF} from "@/http/clientehttp";
 import { loginInterface } from "@/interfaces/loginInterface";
 interface Estado {
   cliente: EstadoCliente;
-  compra: EstadoCompra;
+  country: EstadoCountry;
   produto:EstadoProduto;
   login:loginInterface
 }
@@ -17,11 +17,11 @@ const store = createStore<Estado>({
     cliente: {
       clientes: [],
     },
-    compra: {
-      compras: [],
+    country: {
+      countries: [],
     },
     produto:{
-      produtos:[]
+      produtos:[],
     },
     login:{} as loginInterface
   },
@@ -48,7 +48,7 @@ const store = createStore<Estado>({
       commit("Logoff")
     }
   },
-  modules: { cliente, compra, produto },
+  modules: { cliente, country, produto },
 });
 const key: InjectionKey<Store<Estado>> = Symbol();
 function useStore(): Store<Estado> {

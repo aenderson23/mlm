@@ -4,5 +4,6 @@ export interface ICliente {
   code: string;
   reference: string;
   chave?:string;
-  carteira?:number
+  carteira?:number;
+  mensagens?:string[];
 }
