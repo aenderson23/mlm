@@ -66,9 +66,9 @@
             </Modal>
           </li>
           <li class="nav-item mx-3">
-            <div class="dropdown">
+            <div class="dropdown d-flex flex-column">
               <button
-                class="btn btn-outline-dark dropdown-toggle d-flex gap-3 align-items-center border-0"
+                class="btn btn-outline-dark dropdown-toggle d-flex gap-3 align-items-center border-0 align-self-center"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
