@@ -1,29 +1,23 @@
 <template>
   <!--Começando a colocar o figma para funcionar-->
-  <section class="container-fluid capa my-3 border-1 rounded-4">
-    <div class="row align-items-center">
-      <div class="col-7">
-        <h1 class="text-white">
-          Lorem ipsum dolor sit amet. Qui eius expedita non optio cupiditate sed voluptatem quidem ea sunt enim et accusamus necessitatibus et nihil suscipit? Ab voluptas ducimus et aspernatur officiis in consequatur animi et eveniet dolorem? Et temporibus doloribus et quisquam omnis vel omnis nemo. Sed aspernatur cumque in magni molestiae ut nihil ipsum eos harum maxime.
-        </h1>
+  <div class="bg-white rounded-4 my-4">
+    <section class="container-fluid capa my-3 border-1 rounded-4">
+      <div class="row align-items-center">
+        <div class="col-7">
+          <h1 class="text-white">
+            Lorem ipsum dolor sit amet. Qui eius expedita non optio cupiditate sed voluptatem quidem ea sunt enim et accusamus necessitatibus et nihil suscipit? Ab voluptas ducimus et aspernatur officiis in consequatur animi et eveniet dolorem? Et temporibus doloribus et quisquam omnis vel omnis nemo. Sed aspernatur cumque in magni molestiae ut nihil ipsum eos harum maxime.
+          </h1>
+        </div>
       </div>
-      <div class="col-5 d-flex justify-content-center capa__aumentar">
-        <!--img
-          src="https://f10c9a1a926d75da4529bf5609086225.cdn.bubble.io/f1661449992781x356035128274128960/M%C3%A3o%20e%20celular.jpeg"
-          alt="imagem de capa"
-          width="300"
-          height="600"
-        /-->
+    </section>
+    <section class="container-lg">
+      <div class="row">
+        <div class="col-3 p-1" v-for="produto in produtos" :key="produto.nome">
+          <ProdutoView class="py-3" v-bind:-produto="produto" />
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="container-lg">
-    <div class="row">
-      <div class="col-3 p-1" v-for="produto in produtos" :key="produto.nome">
-        <ProdutoView class="py-3" v-bind:-produto="produto" />
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script lang="ts">

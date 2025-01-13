@@ -1,6 +1,6 @@
 export default{
-    leitura: "COMPRA_LEITURA",
-    cadastro: "COMPRA_CADASTRO",
-    alterar:"COMPRA_ALTERAR",
-    deletar:"COMPRA_DELETE",
+    leitura: "COUNTRY_LEITURA",
+    cadastro: "COUNTRY_CADASTRO",
+    alterar:"COUNTRY_ALTERAR",
+    deletar:"COUNTRY_DELETE",
 }

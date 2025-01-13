@@ -96,6 +96,9 @@ export class Structure {
     }
   }
   public distribuirComissão(usuario: ICliente[], valor: number): void {
+    if (usuario.length > 6) {
+      throw new Error("The length of the User must be 6 or less");
+    }
     for (let i = 0; i < usuario.length; i++) {
       usuario[i].carteira = valor * this.comissão[i];
     }

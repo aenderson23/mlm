@@ -5,10 +5,12 @@ import { country, EstadoCountry } from "./countries";
 import { EstadoProduto, produto } from "./produtos";
 import {apiWF} from "@/http/clientehttp";
 import { loginInterface } from "@/interfaces/loginInterface";
+import { EstadoVendas, venda } from "./Compra";
 interface Estado {
   cliente: EstadoCliente;
   country: EstadoCountry;
-  produto:EstadoProduto;
+  produto: EstadoProduto;
+  venda: EstadoVendas;
   login:loginInterface
 }
 
@@ -22,6 +24,9 @@ const store = createStore<Estado>({
     },
     produto:{
       produtos:[],
+    },
+    venda:{
+      vendas:[]
     },
     login:{} as loginInterface
   },
@@ -48,7 +53,7 @@ const store = createStore<Estado>({
       commit("Logoff")
     }
   },
-  modules: { cliente, country, produto },
+  modules: { cliente, country, produto, venda },
 });
 const key: InjectionKey<Store<Estado>> = Symbol();
 function useStore(): Store<Estado> {
